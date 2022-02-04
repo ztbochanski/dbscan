@@ -28,7 +28,7 @@ This algorithm attempts to label each point as one of the following:
 - **data** - multi dimensional data points
 - **neighbor_range** - the distance where other points within this range can be neighbors
 - **core_point_density_threshold** - minimum number of neighbor points required for a point to be a core point
-- **distance_method** - the formula to use for distance among data points
+- **ranging_method** - the formula to use for distance among data points
 - **point_label** - the option to be a *core*, *border*, or *noise* point. 
 
 ### Steps
@@ -44,7 +44,7 @@ This algorithm attempts to label each point as one of the following:
 - Input: `data`
 - Input: `neighbor_range`
 - Input: `core_point_density_threshold`
-- Input: `distance_method`
+- Input: `ranging_method`
 - Input: `point_label`
   
 ```ruby
@@ -75,4 +75,3 @@ for each point in data
 ## References
 
 https://dl.acm.org/doi/pdf/10.1145/3068335
-
