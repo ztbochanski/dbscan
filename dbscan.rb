@@ -14,7 +14,6 @@ x8 = Point.new(dimensions: [3,2], name: "x8")
 x9 = Point.new(dimensions: [6,3], name: "x9")
 data = SpatialData.new(points: [x1, x2, x3, x4, x5, x6, x7, x8, x9])
 
-
 data.points.each do | point |
   prox_scanner = ProximityScanner.new(data: data, point_p: point, neighbor_range: 1, ranging_method: Euclidean.new)
   neighbors = prox_scanner.scan_for_neighbors
