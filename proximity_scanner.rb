@@ -15,7 +15,7 @@ class ProximityScanner
     neighbors = []
     data.points.each do | other_point |
       if neighbor_to(other_point)
-        neighbors << other_point
+        neighbors << other_point.name
       end
     end
     return neighbors
