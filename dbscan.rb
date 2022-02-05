@@ -19,7 +19,7 @@ data = SpatialData.new(points: [x1, x2, x3, x4, x5, x6, x7, x8, x9])
 
 # inputs
 NEIGHBOR_RANGE = 1
-CORE_POINT_DENSITY_THRESHOLD = 3
+DENSITY_THRESHOLD = 3
 
 # dbscan algorithm
 data.points.each do | point |
@@ -31,7 +31,7 @@ data.points.each do | point |
     ranging_method: Euclidean.new
   ).scan_for_neighbors
   neighbors.delete(point)
-  if neighbors.size >= CORE_POINT_DENSITY_THRESHOLD
+  if neighbors.size >= DENSITY_THRESHOLD
     puts "core #{point.name}: neighbors are: #{neighbors}"
   elsif neighbors.size == 1
     puts "noise #{point.name}: neighbors are: #{neighbors}"
