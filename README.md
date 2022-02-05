@@ -61,11 +61,10 @@ for each point in data
       cluster = Cluster.new().add(core_point)
 
     # 3. Non core points are noise or border points
+    elsif number of neighbors is 1
+      noise_point = Noise.new(point)
     else
-      if number of neighbors is 0
-        noise_point = Noise.new(point)
-      else
-        border_point = Border.new(point)
+      border_point = Border.new(point)
 ```
 
 ## Tools
