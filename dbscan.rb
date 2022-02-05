@@ -22,6 +22,8 @@ NEIGHBOR_RANGE = 1
 CORE_POINT_DENSITY_THRESHOLD = 3
 
 # dbscan algorithm
+clusters = []
+
 data.points.each do | point |
   neighbors = ProximityScanner.new(data: data, 
                                    point_p: point, 
@@ -31,6 +33,9 @@ data.points.each do | point |
 
   if neighbors.size >= CORE_POINT_DENSITY_THRESHOLD
     puts "core #{point.name}: neighbors are: #{neighbors}"
+  
+    new_cluster = {point.name => neighbors}
+    clusters << new_cluster
   elsif neighbors.size == 1
     puts "noise #{point.name}: neighbors are: #{neighbors}"
   else
@@ -38,3 +43,5 @@ data.points.each do | point |
   end
 
 end
+
+puts clusters
