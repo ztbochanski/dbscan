@@ -26,8 +26,8 @@ This algorithm attempts to label each point as one of the following:
 
 ### Inputs
 - **data** - multi dimensional data points
-- **neighbor_range** - the distance where other points within this range can be neighbors
-- **core_point_density_threshold** - minimum number of neighbor points required for a point to be a core point
+- **NEIGHBOR_RANGE** - the distance where other points within this range can be neighbors
+- **CORE_POINT_DENSITY_THRESHOLD** - minimum number of neighbor points required for a point to be a core point
 - **ranging_method** - the formula to use for distance among data points
 - **point_label** - the option to be a *core*, *border*, or *noise* point. 
 
@@ -42,8 +42,8 @@ This algorithm attempts to label each point as one of the following:
 
 ## Pseudocode
 - Input: `data`
-- Input: `neighbor_range`
-- Input: `core_point_density_threshold`
+- Input: `NEIGHBOR_RANGE`
+- Input: `CORE_POINT_DENSITY_THRESHOLD`
 - Input: `ranging_method`
 - Input: `point_label`
   
@@ -56,7 +56,7 @@ for each point in data
     neighbors = range to(other points)
 
     # 2. Create cluster with core points
-    if number of neighbors >= core_point_density_threshold?
+    if number of neighbors >= CORE_POINT_DENSITY_THRESHOLD?
       core_point = Core.new(point)
       cluster = Cluster.new().add(core_point)
 
